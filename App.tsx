@@ -2,6 +2,7 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, ScrollView, Text, View, StyleSheet } from 'react-native';
 import FeedCard from './components/ui/FeedCard';
+import OnboardingScreen from './src/screens/OnboardingScreen';
 import { colors } from './design-tokens';
 
 const mockFeedData = [
@@ -21,7 +22,9 @@ const mockFeedData = [
   },
 ];
 
-export default function App() {
+const SHOW_ONBOARDING = true;
+
+const FeedScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar style="dark" />
@@ -44,6 +47,10 @@ export default function App() {
       </ScrollView>
     </SafeAreaView>
   );
+};
+
+export default function App() {
+  return SHOW_ONBOARDING ? <OnboardingScreen /> : <FeedScreen />;
 }
 
 const styles = StyleSheet.create({
