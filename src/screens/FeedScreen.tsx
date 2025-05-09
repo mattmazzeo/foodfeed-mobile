@@ -13,7 +13,11 @@ import FeedCard from '../components/ui/FeedCard';
 import { feedApi, FeedItem, mockFeedItems } from '../services/api';
 import { colors, spacing, typography } from '../design-tokens';
 
-export const FeedScreen: React.FC = () => {
+interface FeedScreenProps {
+  onTransactionSelect?: (id: string) => void;
+}
+
+export const FeedScreen: React.FC<FeedScreenProps> = ({ onTransactionSelect }) => {
   const [feedItems, setFeedItems] = useState<FeedItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
@@ -102,7 +106,7 @@ export const FeedScreen: React.FC = () => {
         imageUrl={item.photo_url || 'https://via.placeholder.com/400x200?text=No+Image'}
         likeCount={item.like_count}
         onLike={() => handleLike(item.id)}
-        onPress={() => console.log('Navigate to detail view for', item.id)}
+        onPress={() => onTransactionSelect ? onTransactionSelect(item.id) : console.log('Navigate to detail view for', item.id)}
       />
     );
   }, [handleLike]);
