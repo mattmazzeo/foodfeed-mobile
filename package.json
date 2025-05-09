@@ -6,17 +6,36 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "storybook-generate": "sb-rn-get-stories"
   },
   "dependencies": {
     "expo": "~53.0.9",
     "expo-status-bar": "~2.2.3",
     "react": "19.0.0",
-    "react-native": "0.79.2"
+    "react-native": "0.79.2",
+    "react-native-web": "^0.20.0",
+    "@expo/metro-runtime": "~5.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@gorhom/bottom-sheet": "^5.1.4",
+    "@react-native-async-storage/async-storage": "^2.1.2",
+    "@react-native-community/datetimepicker": "^8.3.0",
+    "@react-native-community/slider": "^4.5.6",
+    "@storybook/addon-ondevice-actions": "^8.6.2",
+    "@storybook/addon-ondevice-controls": "^8.6.2",
+    "@storybook/react-native": "^8.6.2",
     "@types/react": "~19.0.10",
+    "babel-loader": "^8.4.1",
+    "nativewind": "^4.1.23",
+    "prettier": "^3.5.3",
+    "react-dom": "^19.0.0",
+    "react-native-gesture-handler": "^2.25.0",
+    "react-native-reanimated": "^3.17.5",
+    "react-native-safe-area-context": "^5.4.0",
+    "react-native-svg": "^15.11.2",
+    "tailwindcss": "^3.4.17",
     "typescript": "~5.8.3"
   },
   "private": true
